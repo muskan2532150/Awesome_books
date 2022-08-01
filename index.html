@@ -1,34 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./script.js" defer></script>
     <title>Awesome books</title>
-</head>
-<body>
+  </head>
+  <body>
     <section class="display-book">
-        <h1>Awesome Books</h1>
-        <p class ="book-title"> Book Title 1</p>
-        <p class="book-author"> Book Author 1</p>
-        <button class="remove-btn">remove</button>
-        <hr>
-        <p class ="book-title"> Book Title 2</p>
-        <p class="book-author"> Book Author 2</p>
-        <button class="remove-btn">remove</button>
-        <hr>
-        
+      <h1>Awesome Books</h1>
+      <div class="book-display-container"></div>
     </section>
 
     <section class="add-book">
-   <input type="text" id="Title" placeholder="Title" required>
-   <input type="text" id="Author" placeholder="Author" required>
-   <button>Add</button>
+      <form class="book-form">
+        <input type="text" id="Title" placeholder="Title" required />
+        <input type="text" id="Author" placeholder="Author" required />
+        <button class="add-btn" type="submit">Add</button>
+      </form>
     </section>
-</body>
+  </body>
 </html>
-
 
 <!--  Html Display section - add to book section
  javascript 
@@ -36,9 +30,7 @@
     - Add buttom event listener
     - remove buttom event listener -->
 
-
-
-    <!-- Display 
+<!-- Display 
     -javascipt dyambically
 -localStorage
 -setItem,getItem,clear,
