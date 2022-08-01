@@ -18,12 +18,7 @@ const storedBooks = [
     //     author: 'Author 2'
     //   }
 ];
-function display() {
 
-    const books = storedBooks;
-    books.forEach(book => addBook(book));
-
-}
 
 function addBook(book) {
     const displayContainer = document.querySelector(".book-display-container")
