@@ -1,0 +1,7 @@
+
+.add-book {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 20%;
+}
