@@ -27,7 +27,7 @@ function addBook(book) {
       <p class="book-author">${book.author}</p>
       <button class="remove-btn">remove</button>
       <hr>
-    `
+  `
 
 }
 
@@ -49,15 +49,23 @@ addToBook.addEventListener('submit', (e) => {
 function load() {
 
     let getbooks = JSON.parse(localStorage.getItem('Book Details'));
-    console.log(getbooks);
     if (getbooks != null) {
         getbooks.forEach(bk => {
             addBook(bk);
-            console.log(storedBooks);
             storedBooks.push(bk);
         })
     }
 }
 
 //Load books
-document.addEventListener('DOMContentLoaded', load);
+load();
+
+
+const close = document.querySelectorAll('.remove-btn');
+close.forEach((ele,index) => {
+    ele.addEventListener('click',()=>{
+       storedBooks.splice(index,1);
+       localStorage.setItem('Book Details', JSON.stringify(storedBooks));
+       
+    })     
+});
