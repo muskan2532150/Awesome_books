@@ -66,6 +66,6 @@ close.forEach((ele,index) => {
     ele.addEventListener('click',()=>{
        storedBooks.splice(index,1);
        localStorage.setItem('Book Details', JSON.stringify(storedBooks));
-       
+       setTimeout("location.reload(true);", 50);
     })     
 });
