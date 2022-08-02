@@ -1,13 +1,14 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   background-color: azure;
 }
-.book-awesome{
+
+.book-awesome {
   width: 500px;
   margin: 0 auto;
   background-color: white;
@@ -16,15 +17,14 @@ body{
   flex-direction: column;
   gap: 30px;
   align-items: center;
-
 }
 
-.display-book{
+.display-book {
   width: 490px;
   border: 2px black solid;
 }
 
-.book-container{
+.book-container {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -32,18 +32,19 @@ body{
   padding-inline: 10px;
 }
 
-.book-container:nth-child(odd){
+.book-container:nth-child(odd) {
   background-color: whitesmoke;
 }
 
-.remove-btn{
+.remove-btn {
   height: 80%;
   border-radius: 0;
   outline: none;
   padding-inline: 8px;
   border: 2px solid black;
 }
-.book-title{
+
+.book-title {
   /* font-size: 30px; */
   line-height: 45px;
 }
@@ -57,14 +58,14 @@ body{
   align-items: center;
 }
 
-.book-form{
+.book-form {
   display: flex;
   flex-direction: column;
   gap: 10px;
   align-items: flex-end;
 }
 
-input{
+input {
   width: 280px;
   border-radius: 0;
   outline: none;
@@ -72,15 +73,13 @@ input{
   height: 30px;
 }
 
-input::placeholder{
+input::placeholder {
   font-size: 15px;
 }
 
-.add-btn{
+.add-btn {
   width: 50px;
   border-radius: 0;
   outline: none;
   border: 2px solid black;
 }
-
-
