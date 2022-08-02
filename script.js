@@ -9,7 +9,6 @@ function getlocalStorage() {
 
 function setlocalStorage(store) {
   localStorage.setItem('Book Details', JSON.stringify(store));
-  console.log(store);
 }
 
 class BookDetails {
@@ -17,10 +16,12 @@ class BookDetails {
     this.storedBooks = book;
   }
 
-  addBook = function (book) {
+  addBook(book) {
+    setlocalStorage(this.storedBooks);
+    console.log(this.storedBooks);
     const displayContainer = document.querySelector('.book-display-container');
     const bookContainer = document.createElement('div');
-    bookContainer.className = "book-container"
+    bookContainer.className = 'book-container';
     bookContainer.innerHTML = `
         <p class="book-title">"${book.title}" by ${book.author}</p>
         <button class="remove-btn">Remove</button>
@@ -28,7 +29,7 @@ class BookDetails {
     displayContainer.appendChild(bookContainer);
   }
 
-  removeBook = function (index, n = 1) {
+  removeBook(index, n = 1) {
     this.storedBooks.splice(index, n);
     setlocalStorage(this.storedBooks);
   }
@@ -46,27 +47,23 @@ addToBook.addEventListener('submit', () => {
   store.storedBooks.push(book);
   // add book to List
   store.addBook(book);
-  // store in local storage
-  setlocalStorage(store.storedBooks);
+  
 });
 
-function load() {
-  const getbooks = getlocalStorage();
-  if (getbooks != null) {
-    getbooks.forEach((bk) => {
-      store.addBook(bk);
-      store.storedBooks.push(bk);
-    });
-  }
-}
-
-// Load books
-load();
+const getbooks = getlocalStorage();
+console.log(getbooks);
+if (getbooks != null) {
+  getbooks.forEach((bk) => {
+    store.addBook(bk);
+    store.storedBooks.push(bk);
+    console.log(bk);
+  });
+} 
 
 const removeBooks = document.querySelectorAll('.remove-btn');
 removeBooks.forEach((book, index) => {
   book.addEventListener('click', () => {
     store.removeBook(index);
-    setTimeout(window.location.reload(), 2000);
+    book.parentElement.remove();
   });
 });

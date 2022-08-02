@@ -48,8 +48,6 @@ body{
   line-height: 45px;
 }
 
-.form-header{}
-
 .add-book {
   display: flex;
   flex-direction: column;
