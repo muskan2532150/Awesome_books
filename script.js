@@ -8,47 +8,58 @@ class Books {
   }
 }
 
-const storedBooks = [
-  //   {
-  //     title: 'Title 1',
-  //     author: 'Author 1'
-  //   },
-  //   {
-  //     title: 'Title 2',
-  //     author: 'Author 2'
-  //   }
-];
-
-function addBook(book) {
-  const displayContainer = document.querySelector('.book-display-container');
-  displayContainer.innerHTML += `
-      <p class="book-title">${book.title}</p>
-      <p class="book-author">${book.author}</p>
-      <button class="remove-btn">remove</button>
-      <hr>
-  `;
+function getlocalStorage() {
+  return JSON.parse(localStorage.getItem('Book Details'));
 }
+
+function setlocalStorage(store) {
+  localStorage.setItem('Book Details', JSON.stringify(store));
+  console.log(store);
+}
+
+class BookDetails {
+  constructor(book = []) {
+    this.storedBooks = book;
+  }
+  addBook = function(book) {
+    const displayContainer = document.querySelector('.book-display-container');
+    displayContainer.innerHTML += `
+            <p class="book-title">${book.title}</p>
+            <p class="book-author">${book.author}</p>
+            <button class="remove-btn">remove</button>
+            <hr>
+        `;
+  }
+
+  removeBook = function(index, n = 1) {
+    this.storedBooks.splice(index, n);
+    setlocalStorage(this.storedBooks);
+  }
+}
+
+const store = new BookDetails();
 
 const addToBook = document.querySelector('.book-form');
 addToBook.addEventListener('submit', () => {
-//   e.preventDefault();
   // creat a new objet and add to it
   const title = addTitle.value;
   const author = addAuthor.value;
-
   const book = new Books(title, author);
-  storedBooks.push(book);
+  //  Push the book obj to array
+  store.storedBooks.push(book);
   // add book to List
-  addBook(book);
-  localStorage.setItem('Book Details', JSON.stringify(storedBooks));
+  store.addBook(book);
+  // store in local storage
+  setlocalStorage(store.storedBooks);
 });
 
 function load() {
-  const getbooks = JSON.parse(localStorage.getItem('Book Details'));
+  const getbooks = getlocalStorage();
   if (getbooks != null) {
     getbooks.forEach((bk) => {
-      addBook(bk);
-      storedBooks.push(bk);
+      store.addBook(bk);
+      store.storedBooks.push(bk);
+      console.log(store.storedBooks);
     });
   }
 }
@@ -59,8 +70,7 @@ load();
 const close = document.querySelectorAll('.remove-btn');
 close.forEach((ele, index) => {
   ele.addEventListener('click', () => {
-    storedBooks.splice(index, 1);
-    localStorage.setItem('Book Details', JSON.stringify(storedBooks));
-    setTimeout(window.location.reload(), 2000);
+    store.removeBook(index);
+    // setTimeout(window.location.reload(), 2000);
   });
 });
