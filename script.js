@@ -17,11 +17,11 @@ class BookDetails {
   }
 
   addBook(book) {
-    setlocalStorage(this.storedBooks);
-    console.log(this.storedBooks);
     const displayContainer = document.querySelector('.book-display-container');
     const bookContainer = document.createElement('div');
     bookContainer.className = 'book-container';
+    const id = this.storedBooks.length + 1;
+    bookContainer.setAttribute('id', id);
     bookContainer.innerHTML = `
         <p class="book-title">"${book.title}" by ${book.author}</p>
         <button class="remove-btn">Remove</button>
@@ -29,12 +29,15 @@ class BookDetails {
     displayContainer.appendChild(bookContainer);
   }
 
-  removeBook(index, n = 1) {
-    this.storedBooks.splice(index, n);
+  removeBook(id) {
+    for (let i = 0; i < this.storedBooks.length; i += 1) {
+      if (this.storedBooks[i].id === parseInt(id, 10)) {
+        this.storedBooks.splice(i, 1);
+      }
+    }
     setlocalStorage(this.storedBooks);
   }
 }
-
 const store = new BookDetails();
 
 const addToBook = document.querySelector('.book-form');
@@ -42,28 +45,27 @@ addToBook.addEventListener('submit', () => {
   // creat a new objet and add to it
   const title = addTitle.value;
   const author = addAuthor.value;
-  const book = new Books(title, author);
+  const id = store.storedBooks.length + 1;
+  const book = new Books(title, author, id);
   //  Push the book obj to array
   store.storedBooks.push(book);
   // add book to List
   store.addBook(book);
-  
+  setlocalStorage(store.storedBooks);
 });
 
 const getbooks = getlocalStorage();
-console.log(getbooks);
 if (getbooks != null) {
   getbooks.forEach((bk) => {
     store.addBook(bk);
     store.storedBooks.push(bk);
-    console.log(bk);
   });
-} 
+}
 
 const removeBooks = document.querySelectorAll('.remove-btn');
-removeBooks.forEach((book, index) => {
+removeBooks.forEach((book) => {
   book.addEventListener('click', () => {
-    store.removeBook(index);
+    store.removeBook(book.parentElement.id);
     book.parentElement.remove();
   });
 });
