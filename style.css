@@ -1,6 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: azure;
+}
+
+.book-awesome {
+  width: 500px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.display-book {
+  width: 490px;
+  border: 2px black solid;
+}
+
+.book-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding-inline: 10px;
+}
+
+.book-container:nth-child(odd) {
+  background-color: whitesmoke;
+}
+
+.remove-btn {
+  height: 80%;
+  border-radius: 0;
+  outline: none;
+  padding-inline: 8px;
+  border: 2px solid black;
+}
+
+.book-title {
+  /* font-size: 30px; */
+  line-height: 45px;
+}
+
 .add-book {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 20%;
+  width: 300px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+input {
+  width: 280px;
+  border-radius: 0;
+  outline: none;
+  border: 2px solid black;
+  height: 30px;
+}
+
+input::placeholder {
+  font-size: 15px;
+}
+
+.add-btn {
+  width: 50px;
+  border-radius: 0;
+  outline: none;
+  border: 2px solid black;
 }
