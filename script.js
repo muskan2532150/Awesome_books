@@ -20,11 +20,10 @@ class BookDetails {
   addBook = function (book) {
     const displayContainer = document.querySelector('.book-display-container');
     const bookContainer = document.createElement('div');
+    bookContainer.className = "book-container"
     bookContainer.innerHTML = `
-        <p class="book-title">${book.title}</p>
-        <p class="book-author">${book.author}</p>
-        <button class="remove-btn">remove</button>
-        <hr>
+        <p class="book-title">"${book.title}" by ${book.author}</p>
+        <button class="remove-btn">Remove</button>
     `;
     displayContainer.appendChild(bookContainer);
   }
