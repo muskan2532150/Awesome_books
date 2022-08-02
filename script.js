@@ -1,10 +1,7 @@
-import Books from "./books.js";
-
+import Books from './books.js';
 
 const addTitle = document.getElementById('Title');
 const addAuthor = document.getElementById('Author');
-
-
 
 function getlocalStorage() {
   return JSON.parse(localStorage.getItem('Book Details'));
@@ -19,21 +16,22 @@ class BookDetails {
   constructor(book = []) {
     this.storedBooks = book;
   }
-  addBook = function(book) {
+
+  addBook = function (book) {
     const displayContainer = document.querySelector('.book-display-container');
-    const bookContainer = document.createElement("div")
+    const bookContainer = document.createElement('div');
     bookContainer.innerHTML = `
         <p class="book-title">${book.title}</p>
         <p class="book-author">${book.author}</p>
         <button class="remove-btn">remove</button>
         <hr>
     `;
-    displayContainer.appendChild(bookContainer)
+    displayContainer.appendChild(bookContainer);
   }
 
-  removeBook = function(index, n = 1) {
+  removeBook = function (index, n = 1) {
     this.storedBooks.splice(index, n);
-    setlocalStorage(this.storedBooks); 
+    setlocalStorage(this.storedBooks);
   }
 }
 
@@ -59,7 +57,6 @@ function load() {
     getbooks.forEach((bk) => {
       store.addBook(bk);
       store.storedBooks.push(bk);
-      console.log(store.storedBooks);
     });
   }
 }
