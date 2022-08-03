@@ -47,6 +47,11 @@ body {
   border-right: 1px solid black;
 }
 
+.nav-links li a:hover,
+.nav-links li a:focus {
+  color: rgb(24, 139, 24);
+}
+
 .book-awesome {
   width: 500px;
   margin: 0 auto;
@@ -86,6 +91,7 @@ body {
   padding-inline: 8px;
   border: 2px solid black;
 }
+
 
 .book-title {
   /* font-size: 30px; */
@@ -154,6 +160,13 @@ input::placeholder {
   position: fixed;
   bottom: 0;
   margin: 20px;
+}
+
+.remove-btn:hover,
+.add-btn:hover {
+  cursor: pointer;
+  color: rgb(64, 65, 64);
+  border-color: rgb(83, 83, 83);
 }
 
 .active {
