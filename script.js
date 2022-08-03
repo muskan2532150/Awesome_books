@@ -52,6 +52,9 @@ addToBook.addEventListener('submit', () => {
   // add book to List
   store.addBook(book);
   setlocalStorage(store.storedBooks);
+  bookSection.classList.add('active');
+  contact.classList.remove('active');
+  addBook.classList.remove('active');
 });
 
 const getbooks = getlocalStorage();
@@ -68,4 +71,32 @@ removeBooks.forEach((book) => {
     store.removeBook(book.parentElement.id);
     book.parentElement.remove();
   });
+});
+
+
+// --
+const navLink = document.querySelectorAll('.nav');
+const contact = document.querySelector(".contact")
+const bookSection = document.querySelector(".display-area");
+const addBook = document.querySelector(".add-book");
+
+console.log(navLink)
+navLink.forEach((link,index) => {
+  link.addEventListener('click', ()=>{
+    // console.log(link)
+    if(index===2){
+      contact.classList.add('active');
+      addBook.classList.remove('active');
+      bookSection.classList.remove('active');
+    } else if(index===0){
+    bookSection.classList.add('active');
+    contact.classList.remove('active');
+    addBook.classList.remove('active');
+    }
+    else {
+      addBook.classList.add('active');
+      bookSection.classList.remove('active');
+      contact.classList.remove('active');
+    }
+  })
 });

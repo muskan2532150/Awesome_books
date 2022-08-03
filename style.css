@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Patrick Hand', cursive;
 }
 
 a{
@@ -17,28 +18,45 @@ body {
   background-color: white
 }
 
-.nav-bar{
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 8%;
-  background-color: white;
-  align-items: center;
-  border: 2px solid black;
-  margin: 2%;
+.nav-bar-section{
+  margin: 1%;
 }
 
+.nav-bar{
+  display: flex;
+  background-color: white;
+  justify-content: space-between;
+  padding: 10px 8%;
+  align-items: center;
+  border: 2px solid black;
+  font-weight: 700;
+}
+.nav-links{
+  display: flex;
+}
 
-
+.nav-links li {
+  padding: 4px 8px ;
+  border-right: 1px solid black;
+}
 
 .book-awesome {
   width: 500px;
   margin: 0 auto;
-  background-color: white;
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 30px;
   align-items: center;
+}
+
+.display-area{
+  display: none;
+  text-align: center;
+}
+
+.display-area .active{
+  display: block;
 }
 
 .display-book {
@@ -72,13 +90,15 @@ body {
 }
 
 .add-book {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 20px;
   width: 300px;
   margin: 0 auto;
   align-items: center;
 }
+
+
 
 .book-form {
   display: flex;
@@ -95,8 +115,9 @@ input {
   height: 30px;
 }
 
-input::placeholder {
+input::placeholder{
   font-size: 15px;
+  padding-left: 10px;
 }
 
 .add-btn {
@@ -106,16 +127,37 @@ input::placeholder {
   border: 2px solid black;
 }
 
-/* active */
-.active {
-  display: block;
-  }
 /* Contact*/
-#contact {
-  
+.contact {
+  display: none;
 }
 
-#contact h2 {
+/* .contact.active{
+  display: block;
+} */
+
+.contact h2 {
 text-align: center;
 padding-bottom:20px
+}
+
+.contact li {
+  list-style-type: disc;
+  line-height: 20px;
+}
+
+.footer {
+  border: 2px solid black;
+  padding: 22px;
+  width: 98%;
+  position: fixed;
+  bottom: 0;
+  margin: 20px;
+}
+
+.active {
+  display: block;
+}
+.add-book.active{
+  display: flex;
 }
