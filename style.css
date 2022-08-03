@@ -5,24 +5,30 @@
   font-family: 'Patrick Hand', cursive;
 }
 
-a{
+a {
   text-decoration: none;
-  color: black ;
+  color: black;
 }
 
-li{
+li {
   list-style: none;
 }
 
 body {
-  background-color: white
+  background-color: white;
 }
 
-.nav-bar-section{
+.nav-bar-section {
   margin: 1%;
 }
 
-.nav-bar{
+.time {
+  text-align: end;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.nav-bar {
   display: flex;
   background-color: white;
   justify-content: space-between;
@@ -31,12 +37,13 @@ body {
   border: 2px solid black;
   font-weight: 700;
 }
-.nav-links{
+
+.nav-links {
   display: flex;
 }
 
 .nav-links li {
-  padding: 4px 8px ;
+  padding: 4px 8px;
   border-right: 1px solid black;
 }
 
@@ -50,13 +57,9 @@ body {
   align-items: center;
 }
 
-.display-area{
+.display-area {
   display: none;
   text-align: center;
-}
-
-.display-area .active{
-  display: block;
 }
 
 .display-book {
@@ -98,8 +101,6 @@ body {
   align-items: center;
 }
 
-
-
 .book-form {
   display: flex;
   flex-direction: column;
@@ -115,7 +116,7 @@ input {
   height: 30px;
 }
 
-input::placeholder{
+input::placeholder {
   font-size: 15px;
   padding-left: 10px;
 }
@@ -127,7 +128,7 @@ input::placeholder{
   border: 2px solid black;
 }
 
-/* Contact*/
+/* Contact */
 .contact {
   display: none;
 }
@@ -137,8 +138,8 @@ input::placeholder{
 } */
 
 .contact h2 {
-text-align: center;
-padding-bottom:20px
+  text-align: center;
+  padding-bottom: 20px;
 }
 
 .contact li {
@@ -158,6 +159,7 @@ padding-bottom:20px
 .active {
   display: block;
 }
-.add-book.active{
+
+.add-book.active {
   display: flex;
 }
