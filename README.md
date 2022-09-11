@@ -1,8 +1,8 @@
 # Awesome Books
-Making a Listing Books Website
+A SPW(Single Page Website) that can track your books on your browser!
 
  ### Live Demo
-  https://muskan2532150.github.io/Awesome_books/
+  [Live Demo](https://muskan2532150.github.io/Awesome_books/)
   
 ## Built With
 
@@ -49,10 +49,18 @@ npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standa
 
 ## Author
 
-- GitHub: @muskan2532150
-- Github: @Sendy IU
-- Twitter: @muskan2532150
-- Twitter:
+👤 **Author1**
+### MUSKAN GUPTA
+- GitHub: [@github](https://github.com/muskan2532150)
+- Twitter: [@twitter](muskan2532150)
+- Linkedin:[Username](https://www.linkedin.com/in/muskan-gupta-869165225/)
+
+👤 **Author2**
+### Sendy IU
+- Github: [@SendyIU](https://github.com/uisendy)
+- Twitter: [@sinieke](https://twitter.com/sinieke)
+- LinkedIn: [LinekdIn](https://www.linkedin.com/in/surafel-getachew-80155b187/)
+
 
 ## 🤝 Contributing
 
