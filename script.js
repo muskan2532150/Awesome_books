@@ -9,7 +9,18 @@ const addBook = document.querySelector('.add-book');
 class Display {
   static displayBooks() {
     const books = LocalStore.getBooks();
+    if (Object.keys(books).length===0) {
+      const displayContainer = document.querySelector('.book-display-container');
+      const bookContainer = document.createElement('div');
+      bookContainer.id = 'no-book';
+      bookContainer.innerHTML = `
+          <p>No Book Found</p>
+      `;
+      displayContainer.appendChild(bookContainer);
+    }
+    else 
     books.forEach((book) => Display.addBook(book));
+    
   }
 
   static addBook(book) {
@@ -41,6 +52,7 @@ const addToBook = document.querySelector('.book-form');
 addToBook.addEventListener('submit', (e) => {
   e.preventDefault();
   // Grab the Values
+  document.querySelector('#no-book').style.display='none';
   const id = LocalStore.idGenerator();
   const title = document.getElementById('Title').value;
   const author = document.getElementById('Author').value;
@@ -59,11 +71,16 @@ addToBook.addEventListener('submit', (e) => {
 
 const displayContainer = document.querySelector('.book-display-container');
 displayContainer.addEventListener('click', (e) => {
+// Display No Book Message
+  if(e.target.parentNode.parentNode.children.length===2)
+  document.querySelector('#no-book').style.display='block';
   // remove from UI
   Display.deleteBook(e.target);
   // remove from LocalStore
   LocalStore.removeBook(e.target.id);
   // remove from LocalStore
+
+
 });
 
 navLink.forEach((link, index) => {
