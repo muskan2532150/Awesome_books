@@ -19,8 +19,7 @@ class Display {
       displayContainer.appendChild(bookContainer);
     }
     else 
-    books.forEach((book) => Display.addBook(book));
-    
+    books.forEach((book) => Display.addBook(book)); 
   }
 
   static addBook(book) {
@@ -72,14 +71,15 @@ addToBook.addEventListener('submit', (e) => {
 const displayContainer = document.querySelector('.book-display-container');
 displayContainer.addEventListener('click', (e) => {
 // Display No Book Message
-  if(e.target.parentNode.parentNode.children.length===2)
-  document.querySelector('#no-book').style.display='block';
+console.log('mmmlk');
   // remove from UI
   Display.deleteBook(e.target);
   // remove from LocalStore
   LocalStore.removeBook(e.target.id);
   // remove from LocalStore
-
+  const books = LocalStore.getBooks();
+  if (Object.keys(books).length===0)
+  document.querySelector('#no-book').style.display='block';
 
 });
 
