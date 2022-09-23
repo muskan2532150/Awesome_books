@@ -1,5 +1,6 @@
 # Awesome Books
-A SPW(Single Page Website) that can track your books on your browser!
+A SPW (Single Page Website) that can track your books on your browser! 
+In this website you can ass books of your choic to  the list of books and save them in your browser localstorage.
 
  ### Live Demo
   [Live Demo](https://muskan2532150.github.io/Awesome_books/)
@@ -10,10 +11,13 @@ A SPW(Single Page Website) that can track your books on your browser!
 - HTML
 - CSS
 - JAVASCRIPT
+
 ###### Tools  
 - Github
+
 ###### Code Editor
 - VS code
+
 ###### Packages 
 - NPM
 - Node
@@ -75,8 +79,6 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Microverse
-- Cindy Shin
-- Original design idea by (Cindy Shin in Behance) [https://www.behance.net/adagio07].
 
 ## 📝 License
 
